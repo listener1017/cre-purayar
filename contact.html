@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - CRE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="brand">CRE</a>
+    <button id="menu-btn" class="menu-btn" aria-label="Open menu">&#9776;</button>
+    <nav id="nav" class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="classes.html">Class Modules</a>
+      <a href="contact.html" class="active">Contact</a>
+      <button id="theme-btn" class="theme-btn" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 class="page-title fade-in">Contact Us</h2>
+
+    <form id="contact-form" class="card form fade-in">
+      <label for="name">Name</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+      <p id="form-status" class="form-status"></p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <h3>Contact Us</h3>
+    <p>📞 +91 00000 00000</p>
+    <p>✉️ mufeedzirajudeen17@gmail.com</p>
+    <p>📍 Your Parish / Address, Aluva, Kerala</p>
+    <p class="copy">&copy; <span id="year"></span> CRE. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

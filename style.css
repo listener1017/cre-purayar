@@ -1,0 +1,196 @@
+/* ===== COLOUR VARIABLES =====
+   Change colours here and the whole site updates.
+   Dark mode overrides them below. */
+:root {
+  --bg: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --blue: #1e6fd9;
+  --green: #2e9e5b;
+  --card: #f5f8fc;
+  --border: #e5e7eb;
+}
+
+/* When JavaScript adds data-theme="dark" to <html>, these values replace the ones above */
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --blue: #4d9dff;
+  --green: #4cc38a;
+  --card: #1e293b;
+  --border: #334155;
+}
+
+/* ===== BASE ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;   /* smooth dark mode switch */
+}
+
+a { text-decoration: none; }
+
+.container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+.center { text-align: center; margin-top: 24px; }
+
+/* ===== HEADER ===== */
+.site-header {
+  position: sticky;            /* stays at the top while scrolling */
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand { font-size: 1.5rem; font-weight: bold; color: var(--blue); }
+
+.nav { display: flex; align-items: center; gap: 22px; }
+.nav a { color: var(--text); font-weight: 500; }
+.nav a:hover, .nav a.active { color: var(--green); }
+
+.theme-btn, .menu-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--text);
+}
+.menu-btn { display: none; }   /* hidden on desktop */
+
+/* ===== HERO (CRE logo) ===== */
+.hero { text-align: center; padding: 70px 20px 30px; }
+
+.logo {
+  font-size: clamp(4.5rem, 18vw, 9rem);   /* big, but shrinks on small screens */
+  letter-spacing: 8px;
+  line-height: 1;
+}
+.logo .c { color: var(--blue); }    /* C = blue  */
+.logo .r { color: var(--green); }   /* R = green */
+.logo .e { color: var(--blue); }    /* E = blue  */
+
+.full-form {
+  margin-top: 10px;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ===== INTRO ===== */
+.intro { font-size: 1.1rem; text-align: center; }
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--blue);
+  color: #fff;
+  border: 2px solid var(--blue);
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+.btn:hover { background: var(--green); border-color: var(--green); transform: translateY(-3px); }
+
+.btn-outline { background: transparent; color: var(--blue); }
+.btn-outline:hover { color: #fff; }
+
+/* ===== CARDS & PAGE TITLES ===== */
+.page-title { text-align: center; color: var(--blue); margin-bottom: 20px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+.card h3 { color: var(--green); margin-bottom: 6px; }
+
+/* ===== SCHEDULE TABLE ===== */
+.table-wrap { overflow-x: auto; margin-top: 20px; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+th { background: var(--blue); color: #fff; }
+tbody tr:hover { background: var(--card); }
+
+/* ===== CONTACT FORM ===== */
+.form label { display: block; margin: 12px 0 4px; font-weight: bold; }
+
+.form input, .form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  font-family: inherit;
+}
+.form .btn { margin-top: 16px; }
+.form-status { margin-top: 12px; color: var(--green); }
+
+/* ===== FOOTER ===== */
+.site-footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+.site-footer h3 { color: var(--blue); margin-bottom: 8px; }
+.copy { margin-top: 12px; color: var(--muted); font-size: 0.85rem; }
+
+/* ===== ANIMATION =====
+   Elements with class "fade-in" start invisible and slide up.
+   JavaScript adds the "show" class when they scroll into view. */
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.show { opacity: 1; transform: translateY(0); }
+
+/* ===== MOBILE (screens 700px wide or smaller) ===== */
+@media (max-width: 700px) {
+  .menu-btn { display: block; }
+
+  .nav {
+    display: none;                 /* hidden until the hamburger is clicked */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    padding: 16px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav.open { display: flex; }     /* JavaScript adds "open" on click */
+}
+
+/* ===== LOGO IMAGE (added) ===== */
+.logo-img {
+  width: 90%;          /* takes most of the screen width on phones */
+  max-width: 300px;    /* but never bigger than this on desktop */
+  height: auto;        /* keeps the proportions */
+  margin: 0 auto;      /* centers the image */
+  display: block;
+}
+.brand-img {
+  height: 40px;     /* change this to resize */
+  width: auto;
+  display: block;
+}

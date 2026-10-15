@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Modules - CRE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="brand">CRE</a>
+    <button id="menu-btn" class="menu-btn" aria-label="Open menu">&#9776;</button>
+    <nav id="nav" class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="classes.html" class="active">Class Modules</a>
+      <a href="contact.html">Contact</a>
+      <button id="theme-btn" class="theme-btn" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 class="page-title fade-in">Class Modules</h2>
+    <p class="center fade-in">Schedule and topics for each day of CRE.</p>
+
+    <!-- The wrapper lets the table scroll sideways on small screens -->
+    <div class="table-wrap fade-in">
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Topic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Copy a <tr>...</tr> row to add more days -->
+          <tr>
+            <td>Day 1</td>
+            <td>25/10/2026</td>
+            <td>8:00 AM - 10:00 AM</td>
+            <td>Introduction to CRE</td>
+          </tr>
+          <tr>
+            <td>Day 2</td>
+            <td>00/00/0000</td>
+            <td>10:00 AM - 12:00 PM</td>
+            <td>Topic for Day 2</td>
+          </tr>
+          <tr>
+            <td>Day 3</td>
+            <td>00/00/0000</td>
+            <td>10:00 AM - 12:00 PM</td>
+            <td>Topic for Day 3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="center">
+      <a href="index.html" class="btn btn-outline">&larr; Back to Home</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <h3>Contact Us</h3>
+    <p>📞 +91 00000 00000</p>
+    <p>✉️ mufeedzirajudeen17@gmail.com</p>
+    <p>📍 Your Parish / Address, Aluva, Kerala</p>
+    <p class="copy">&copy; <span id="year"></span> CRE. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
